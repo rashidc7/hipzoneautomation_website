@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Hipzone Automation</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        void: '#030508',
+                        panel: '#0a0f16',
+                        cyber: '#00e5ff',
+                        cyberDark: '#008b99',
+                        slate: '#94a3b8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Orbitron', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #030508;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #008b99;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00e5ff;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(3, 5, 8, 0.7) 0%, rgba(3, 5, 8, 0.9) 80%, #030508 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-void text-slate font-sans antialiased selection:bg-cyber selection:text-void">
+
+    <!-- Floating WhatsApp CTA -->
+    <a href="https://wa.me/971566767556" target="_blank"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.4)] z-50 hover:scale-110 hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] transition-all duration-300">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-void/90 backdrop-blur-md border-b border-white/5 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="images/hipzone_logo.png" alt="Hipzone Automation Logo"
+                    class="h-10 w-auto group-hover:drop-shadow-[0_0_15px_#00e5ff] transition-all">
+                <!-- <div>
+                    <h1 class="font-display font-bold text-xl tracking-widest text-white leading-none">HIPZONE</h1>
+                </div> -->
+            </a>
+
+            <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wide uppercase">
+                <a href="index.html" class="hover:text-cyber transition-colors">Home</a>
+                <a href="#" class="text-cyber transition-colors">About</a>
+                <a href="index.html#services" class="hover:text-cyber transition-colors">Services</a>
+                <a href="index.html#projects" class="hover:text-cyber transition-colors">Projects</a>
+            </div>
+
+            <a href="#contact"
+                class="hidden md:inline-block px-6 py-2 border border-cyber text-cyber font-display text-xs uppercase tracking-widest hover:bg-cyber hover:text-void transition-all duration-300">
+                Contact Us
+            </a>
+
+            <button class="md:hidden text-white text-2xl" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-void/95 backdrop-blur-xl z-50 hidden flex-col items-center justify-center gap-8 text-xl font-display uppercase">
+        <a href="index.html" class="text-white hover:text-cyber mobile-link">Home</a>
+        <a href="#" class="text-cyber mobile-link">About</a>
+        <a href="index.html#services" class="text-white hover:text-cyber mobile-link">Services</a>
+        <a href="index.html#projects" class="text-white hover:text-cyber mobile-link">Projects</a>
+        <a href="#contact" class="text-white hover:text-cyber mobile-link">Contact</a>
+        <button id="close-menu" class="absolute top-6 right-6 text-3xl text-white hover:text-cyber"><i
+                class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-[60vh] flex flex-col justify-center pt-20 border-b border-white/5">
+        <div class="absolute inset-0 bg-[url('images/unsplash/1558442074-3c19857bc1dc.jpg')] bg-cover bg-center">
+        </div>
+        <div class="absolute inset-0 hero-gradient"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full reveal text-center">
+            <h1
+                class="text-5xl md:text-7xl font-display font-black text-white mb-6 uppercase tracking-tight leading-none">
+                The Architecture <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyber to-slate-500 text-4xl md:text-6xl block mt-2">Of
+                    Trust</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-slate/90 leading-relaxed">
+                We do not just install systems. We engineer absolute control, uncompromising security, and seamless
+                living.
+            </p>
+        </div>
+    </header>
+
+    <!-- THE MANIFESTO -->
+    <section class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="reveal">
+                <i class="fa-solid fa-microchip text-4xl text-cyber mb-6"></i>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-8 uppercase">Who We Are</h2>
+
+                <div class="space-y-6 text-lg text-slate leading-relaxed">
+                    <p>
+                        Hipzone Automation provides smart home automation, security systems, and integrated technology
+                        solutions for homes, villas, and businesses. We operate at the intersection of luxury and
+                        relentless utility.
+                    </p>
+                    <p>
+                        With over 10 years of collective experience and more than <span
+                            class="text-white font-bold">1500+ projects completed across the UAE and India</span>, our
+                        team specializes in professional system design, flawless installation, and iron-clad after-sales
+                        support.
+                    </p>
+                    <p>
+                        Our vision is singular: To be a globally trusted brand in smart living. We deliver cutting-edge
+                        automation that enhances comfort, elevates lifestyles, and provides total peace of
+                        mind—empowering your space to operate seamlessly, without stress.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE ARCHITECTS (FOUNDERS) -->
+    <section class="py-24 relative border-t border-white/5 bg-gradient-to-b from-panel to-void">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-display tracking-[0.2em] text-cyber uppercase mb-2">The Architects</h2>
+                <h3 class="text-3xl md:text-4xl font-display font-bold text-white uppercase">Leadership</h3>
+                <p class="mt-4 text-slate max-w-2xl mx-auto">No corporate shadows. Just the individuals engineering your
+                    security and dictating the standard.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Muhammed Shafi -->
+                <div class="group reveal relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-b from-cyber/20 to-transparent blur-sm group-hover:from-cyber/40 transition-all duration-500">
+                    </div>
+                    <div class="relative bg-void border border-white/10 overflow-hidden shadow-2xl">
+                        <div class="aspect-[4/5] overflow-hidden bg-panel relative">
+                            <div
+                                class="absolute inset-0 bg-cyber/10 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500">
+                            </div>
+                            <img src="/images/gallery/IMG_1009.png" alt="Muhammed Shafi - CEO"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 border-t border-white/5 text-center relative z-20 bg-void">
+                            <h4 class="text-2xl font-display font-bold text-white mb-1 uppercase tracking-wider">
+                                Muhammed Shafi</h4>
+                            <p class="text-cyber text-sm tracking-[0.1em] uppercase font-bold">CEO</p>
+                            <p class="text-slate text-xs tracking-widest uppercase mt-2">Digital Security Consultant</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lubaib -->
+                <div class="group reveal delay-100 relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-b from-cyber/20 to-transparent blur-sm group-hover:from-cyber/40 transition-all duration-500">
+                    </div>
+                    <div class="relative bg-void border border-white/10 overflow-hidden shadow-2xl">
+                        <div class="aspect-[4/5] overflow-hidden bg-panel relative">
+                            <div
+                                class="absolute inset-0 bg-cyber/10 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500">
+                            </div>
+                            <img src="/images/gallery/IMG_20230921_163932.png" alt="Lubaib - Co-Founder"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 border-t border-white/5 text-center relative z-20 bg-void">
+                            <h4 class="text-2xl font-display font-bold text-white mb-1 uppercase tracking-wider">Lubaib
+                            </h4>
+                            <p class="text-cyber text-sm tracking-[0.1em] uppercase font-bold">Co-Founder</p>
+                            <p class="text-void text-xs tracking-widest uppercase mt-2 select-none">.</p>
+                            <!-- Spacer to match height -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="py-24 bg-panel border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-display tracking-[0.2em] text-cyber uppercase mb-2">The Foundation</h2>
+                <h3 class="text-3xl md:text-4xl font-display font-bold text-white uppercase">Our Core Values</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Value 1 -->
+                <div
+                    class="p-8 bg-void border border-white/5 hover:border-cyber transition-all duration-300 group reveal">
+                    <i class="fa-solid fa-gem text-3xl text-cyber mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-display font-bold text-white mb-3">Uncompromising Quality</h4>
+                    <p class="text-sm text-slate leading-relaxed">We never cut corners. From product selection to
+                        service delivery, every single step reflects our commitment to the absolute highest standards.
+                    </p>
+                </div>
+
+                <!-- Value 2 -->
+                <div
+                    class="p-8 bg-void border border-white/5 hover:border-cyber transition-all duration-300 group reveal delay-100">
+                    <i
+                        class="fa-solid fa-handshake-angle text-3xl text-cyber mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-display font-bold text-white mb-3">Integrity Above All</h4>
+                    <p class="text-sm text-slate leading-relaxed">We stand by our word. Even if it costs us time or
+                        money, we do exactly what we promised. Trust is the foundation of everything we build.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div
+                    class="p-8 bg-void border border-white/5 hover:border-cyber transition-all duration-300 group reveal delay-200">
+                    <i
+                        class="fa-solid fa-server text-3xl text-cyber mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-display font-bold text-white mb-3">System-Driven Excellence</h4>
+                    <p class="text-sm text-slate leading-relaxed">Our success does not depend on any one person. We run
+                        on robust, unforgiving systems and processes that ensure consistency, reliability, and scale.
+                    </p>
+                </div>
+
+                <!-- Value 4 -->
+                <div
+                    class="p-8 bg-void border border-white/5 hover:border-cyber transition-all duration-300 group reveal">
+                    <i
+                        class="fa-solid fa-chart-line text-3xl text-cyber mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-display font-bold text-white mb-3">Value-First Approach</h4>
+                    <p class="text-sm text-slate leading-relaxed">We don't sell cheap. We deliver long-term value to
+                        customers who appreciate quality. Our focus is on solving real problems, not pushing boxes.</p>
+                </div>
+
+                <!-- Value 5 -->
+                <div
+                    class="p-8 bg-void border border-white/5 hover:border-cyber transition-all duration-300 group reveal delay-100">
+                    <i
+                        class="fa-solid fa-users text-3xl text-cyber mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-display font-bold text-white mb-3">Strong Company Culture</h4>
+                    <p class="text-sm text-slate leading-relaxed">We cultivate a culture of discipline, growth, and
+                        accountability. Every team member knows the Hipzone way and breathes it into their work.</p>
+                </div>
+
+                <!-- CTA Box -->
+                <div
+                    class="p-8 bg-cyber/5 border border-cyber hover:bg-cyber/10 transition-all duration-300 group reveal delay-200 flex flex-col justify-center items-center text-center">
+                    <h4 class="text-xl font-display font-bold text-white mb-4">Experience the Standard</h4>
+                    <a href="index.html#contact"
+                        class="px-6 py-3 bg-cyber text-void font-bold uppercase tracking-wider hover:bg-white transition-colors">Connect
+                        With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-panel border-t border-white/10 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 reveal">
+
+                <!-- Branding -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="images/hipzone_logo.png" alt="Hipzone Automation Logo" class="h-12 w-auto">
+                        <h2 class="font-display font-bold text-2xl text-white tracking-widest">HIPZONE</h2>
+                    </div>
+                    <p class="text-sm text-slate mb-8 leading-relaxed">
+                        Hipzone Automation provides smart automation and security solutions across UAE and India, with
+                        1500+ completed projects and over 8 years of experience.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/hipzone-automation%E3%85%A4/" target="_blank"
+                            class="w-10 h-10 rounded bg-void border border-white/10 flex items-center justify-center hover:border-cyber hover:text-cyber transition-all"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/hipzone.ae" target="_blank"
+                            class="w-10 h-10 rounded bg-void border border-white/10 flex items-center justify-center hover:border-cyber hover:text-cyber transition-all"
+                            title="Instagram UAE"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/hipzone_automation" target="_blank"
+                            class="w-10 h-10 rounded bg-void border border-white/10 flex items-center justify-center hover:border-cyber hover:text-cyber transition-all"
+                            title="Instagram India"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded bg-void border border-white/10 flex items-center justify-center hover:border-cyber hover:text-cyber transition-all"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- UAE Office -->
+                <div class="md:col-span-1 border border-cyber/30 bg-void p-6 rounded-sm relative">
+                    <div
+                        class="absolute -top-3 left-6 bg-cyber text-void px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                        Priority Hub</div>
+                    <h3 class="text-white font-display font-bold uppercase tracking-wider mb-4 mt-2 text-xl">UAE Office
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-white"></i>
+                            <span>Dubai – United Arab Emirates</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-[#25D366] text-lg"></i>
+                            <a href="https://wa.me/971566767556" target="_blank"
+                                class="hover:text-white transition-colors">+971 56 676 7556</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-white"></i>
+                            <a href="tel:+971505508830" class="hover:text-white transition-colors">+971 50 550 8830</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- India Office -->
+                <div class="md:col-span-1 border border-white/10 bg-void p-6 rounded-sm">
+                    <h3 class="text-white font-display font-bold uppercase tracking-wider mb-6 text-xl">India Office
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-white"></i>
+                            <span>Calicut – Kerala, India</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-white"></i>
+                            <a href="tel:+919496668458" class="hover:text-white transition-colors">+91 949 666 8458</a>
+                        </li>
+                        <li class="flex items-center gap-3 mt-6 pt-6 border-t border-white/10">
+                            <i class="fa-solid fa-envelope text-cyber"></i>
+                            <a href="mailto:contact@hipzoneautomation.com"
+                                class="hover:text-cyber transition-colors">contact@hipzoneautomation.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate/50">
+                <p>&copy; 2026 Hipzone Automation. All Rights Reserved.</p>
+                <div class="mt-4 md:mt-0 uppercase tracking-widest">
+                    The Analog Age is Dead.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar styling on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'bg-void');
+                navbar.classList.remove('bg-void/90');
+            } else {
+                navbar.classList.add('bg-void/90');
+                navbar.classList.remove('shadow-lg', 'bg-void');
+            }
+        });
+
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up', 'visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.classList.add('fade-in-up');
+            observer.observe(el);
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    </script>
+</body>
+
+</html>
